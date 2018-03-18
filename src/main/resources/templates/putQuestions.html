@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/registration.css}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+   .container2 {
+      padding: 30px 30px;
+   }
+
+   .bg-1 {
+    background: #2d2d30;
+    color: #bdbdbd;
+   }
+    .bg-1 h3 {color: #fff;}
+    .bg-1 p {font-style: italic;}
+   #search {
+     height: 100px;
+     width: 400px;
+    }
+
+    form {
+  text-align: center;
+}
+
+  </style>
+
+</head>
+<body>
+<div class="bg-1">
+    <form th:action="@{/getAllQuestions}" method="get">
+        <button class="btn btn-md btn-warning btn-block" type="Submit" style="height:50px; width:100px">HomePage</button>
+    </form>
+</div>
+
+<div class="bg-1 text-center" >
+
+    <div class="container text-center">
+        <div class="row text-center">
+            <div class="col-md-6 col-md-offset-3 text-center">
+
+                <form autocomplete="off" action="#" th:action="@{/setQuestion}"
+                      th:object="${question}" method="post" class="form-horizontal"
+                      role="form">
+                    <h2>Add Coding Question</h2>
+
+                    <div class="form-group text-center">
+                        <div class="col-sm-9">
+                            <label th:if="${#fields.hasErrors('questionName')}" th:errors="*{questionName}"
+                                   class="validation-message"></label>
+                            <input type="text" th:field="*{questionName}" placeholder="Question"
+                                   class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="form-group text-center">
+                        <div class="col-sm-9 text-center">
+                            <label	th:if="${#fields.hasErrors('inputTestCase')}" th:errors="*{inputTestCase}"
+                                      class="validation-message"></label>
+                            <input type="text" th:field="*{inputTestCase}"
+                                   placeholder="Input Test Case" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <div class="col-sm-9 text-center">
+                            <input type="text" th:field="*{outputTestCase}" placeholder="Output Test Case"
+                                   class="form-control" /> <label
+                                th:if="${#fields.hasErrors('outputTestCase')}" th:errors="*{outputTestCase}"
+                                class="validation-message"></label>
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <div class="col-sm-9 text-center">
+                            <input type="text" th:field="*{info}"
+                                   placeholder="Condition" class="form-control " /> <label
+                                th:if="${#fields.hasErrors('info')}" th:errors="*{info}"
+                                class="validation-message"></label>
+                        </div>
+                    </div>
+
+                    <div class="form-group text-center">
+                        <div class="col-sm-9 text-center">
+                            <button type="submit" class="btn btn-primary btn-block">Save Question</button>
+                        </div>
+                    </div>
+
+                    <span th:utext="${Message}"></span>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>

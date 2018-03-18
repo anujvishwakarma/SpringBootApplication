@@ -8,12 +8,13 @@ import javax.persistence.*;
  */
 
 @Entity
+@Table(name = "questions")
 public class Question {
 
     @javax.persistence.Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer Id;
-    private String question;
+    private String questionName;
     private String inputTestCase;
     private String outputTestCase;
     private String info;
@@ -22,16 +23,16 @@ public class Question {
 
     }
 
-    public Question(Integer id, String question, String inputTestCase, String outputTestCase, String info) {
+    public Question(Integer id, String questionName, String inputTestCase, String outputTestCase, String info) {
         Id = id;
-        this.question = question;
+        this.questionName = questionName;
         this.inputTestCase = inputTestCase;
         this.outputTestCase = outputTestCase;
         this.info = info;
     }
 
-    public Question(String question, String inputTestCase, String outputTestCase, String info) {
-        this.question = question;
+    public Question(String questionName, String inputTestCase, String outputTestCase, String info) {
+        this.questionName = questionName;
         this.inputTestCase = inputTestCase;
         this.outputTestCase = outputTestCase;
         this.info = info;
@@ -45,12 +46,12 @@ public class Question {
         Id = id;
     }
 
-    public String getQuestion() {
-        return question;
+    public String getQuestionName() {
+        return questionName;
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
+    public void setQuestionName(String questionName) {
+        this.questionName = questionName;
     }
 
     public String getInputTestCase() {

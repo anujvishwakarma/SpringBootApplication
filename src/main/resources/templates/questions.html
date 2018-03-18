@@ -21,7 +21,6 @@
 <body>
 
 <div class="text" >
-
     <div class="bg-1">
         <div class="container">
             <div class="container2 text-center">
@@ -44,7 +43,7 @@
                 <tbody>
                 <tr th:each="question, status : ${questions}">
                     <td th:text="${status.count}">1</td>
-                    <td th:utext="${#strings.unescapeJava(#strings.replace(#strings.escapeJava(question.question),'\n','&lt;br /&gt;'))}">Question</td>
+                    <td th:utext="${#strings.unescapeJava(#strings.replace(#strings.escapeJava(question.questionName),'\n','&lt;br /&gt;'))}">Question</td>
                     <td th:utext="${#strings.unescapeJava(#strings.replace(#strings.escapeJava(question.inputTestCase),'\n','&lt;br /&gt;'))}">InputTestCase</td>
                     <td th:utext="${#strings.unescapeJava(#strings.replace(#strings.escapeJava(question.outputTestCase),'\n','&lt;br /&gt;'))}">OutputTestCase</td>
                     <td th:utext="${#strings.unescapeJava(#strings.replace(#strings.escapeJava(question.info),'\n','&lt;br /&gt;'))}">Conditions</td>
