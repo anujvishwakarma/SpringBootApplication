@@ -5,17 +5,17 @@ Simple spring boot application for providing basic algorithms and data structure
 ## Getting Started
 
 1) Clone this project into your local.
-2) Create database in mysql with name 'myquestions' [Make sure mysql running on 3306 port]
+2) Create database in mysql with name 'CodeEra' [Make sure mysql running on 3306 port]
 3) Create table question as
 
-| question | CREATE TABLE `question` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `question` varchar(10240) DEFAULT NULL,
+| questions | CREATE TABLE `questions` (
+  `id` int(11) NOT NULL,
+  `info` varchar(255) DEFAULT NULL,
   `input_test_case` varchar(255) DEFAULT NULL,
   `output_test_case` varchar(255) DEFAULT NULL,
-  `info` varchar(120) DEFAULT NULL,
+  `question_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 |
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 |
 
 ### Prerequisites
 1) Spring
