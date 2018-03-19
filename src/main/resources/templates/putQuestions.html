@@ -52,8 +52,8 @@
                         <div class="col-sm-9">
                             <label th:if="${#fields.hasErrors('questionName')}" th:errors="*{questionName}"
                                    class="validation-message"></label>
-                            <input type="text" th:field="*{questionName}" placeholder="Question"
-                                   class="form-control" />
+                            <textarea type="text" th:field="*{questionName}" placeholder="Question"
+                                   class="form-control"></textarea>
                         </div>
                     </div>
 
@@ -61,22 +61,22 @@
                         <div class="col-sm-9 text-center">
                             <label	th:if="${#fields.hasErrors('inputTestCase')}" th:errors="*{inputTestCase}"
                                       class="validation-message"></label>
-                            <input type="text" th:field="*{inputTestCase}"
-                                   placeholder="Input Test Case" class="form-control" />
+                            <textarea type="text" th:field="*{inputTestCase}"
+                                   placeholder="Input Test Case" class="form-control"></textarea>
                         </div>
                     </div>
                     <div class="form-group text-center">
                         <div class="col-sm-9 text-center">
-                            <input type="text" th:field="*{outputTestCase}" placeholder="Output Test Case"
-                                   class="form-control" /> <label
+                            <textarea th:field="*{outputTestCase}" placeholder="Output Test Case"
+                                      class="form-control"></textarea><label
                                 th:if="${#fields.hasErrors('outputTestCase')}" th:errors="*{outputTestCase}"
                                 class="validation-message"></label>
                         </div>
                     </div>
                     <div class="form-group text-center">
                         <div class="col-sm-9 text-center">
-                            <input type="text" th:field="*{info}"
-                                   placeholder="Condition" class="form-control " /> <label
+                            <textarea type="text" th:field="*{info}"
+                                   placeholder="Condition" class="form-control " ></textarea> <label
                                 th:if="${#fields.hasErrors('info')}" th:errors="*{info}"
                                 class="validation-message"></label>
                         </div>
